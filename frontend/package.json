@@ -1,0 +1,41 @@
+{
+  "name": "physical-ai-textbook-platform",
+  "version": "1.0.0",
+  "description": "AI-Native Textbook Platform for Physical AI & Humanoid Robotics",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "docusaurus": "^2.0.0-beta.22",
+    "@docusaurus/core": "^2.0.0-beta.22",
+    "@docusaurus/preset-classic": "^2.0.0-beta.22",
+    "clsx": "^1.1.1",
+    "prism-react-renderer": "^1.2.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.0",
+    "postcss": "^8.4.5",
+    "tailwindcss": "^3.0.0",
+    "eslint": "latest",
+    "eslint-config-next": "latest"
+  },
+  "keywords": [
+    "ai",
+    "textbook",
+    "education",
+    "robotics",
+    "physical-ai",
+    "humanoid"
+  ],
+  "author": "SpecifyPlus AI",
+  "license": "MIT"
+}

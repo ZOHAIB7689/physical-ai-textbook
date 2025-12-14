@@ -1,55 +1,90 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!-- SYNC IMPACT REPORT
+Version change: N/A -> 1.0.0
+Modified principles: N/A (new constitution)
+Added sections: All sections (new constitution)
+Removed sections: None
+Templates requiring updates: TODO
+Follow-up TODOs: None
+-->
+# Physical AI & Humanoid Robotics — AI-Native Textbook Platform Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### Spec-Driven Development ONLY
+All implementation work requires explicit specification approval via `/sp.specify`. No coding, no repositories, no files may be generated until formal approval is granted. This ensures architectural discipline and traceable development.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### Specification-First Validation
+All work must be planned and validated through comprehensive Markdown specifications before any coding begins. Each feature, module, and functionality must be detailed with acceptance criteria, interfaces, and test scenarios.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### Frontend Standardization
+Frontend development uses Next.js + Docusaurus for content delivery. This ensures consistent user experience, SEO optimization, and scalable content management for the textbook platform.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### Styling Framework
+Styling follows TailwindCSS, shadcn/ui, and Skipper-style animated UI implementations. This creates a cohesive visual experience that supports the educational objectives of the platform.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### Backend RAG Architecture
+Backend chatbot is Python-based and integrated with Next.js. The RAG system relies on OpenAI Agents/ChatKit SDKs, FastAPI, Neon Serverless Postgres, and Qdrant Cloud (Free Tier) to deliver responsive AI-powered learning assistance.
 
-### [PRINCIPLE_6_NAME]
+### Content Modularity
+Book content must be modular, versionable, and AI-consumable. This enables adaptive learning paths, personalized content delivery, and seamless updates to educational materials.
 
+### Personalization & Localization
+Personalization, Urdu translation, and adaptive learning are first-class design goals. The platform must accommodate diverse learning styles, languages, and proficiency levels.
 
-[PRINCIPLE__DESCRIPTION]
+### Hackathon Traceability
+Hackathon bonus objectives must be explicitly planned and traceable. Each objective must have corresponding specifications and implementation tasks that can be tracked through the development lifecycle.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+## Additional Constraints
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+### Non-Goals
+- Premature coding without formal specification approval
+- UI mockups without underlying architecture plans
+- Infrastructure provisioning before specification completion
+- Package installation steps without architectural context
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+### Allowed Technologies
+- Next.js + Docusaurus for frontend
+- Python with FastAPI for backend services
+- TailwindCSS, shadcn/ui for styling
+- OpenAI Agents / ChatKit SDKs for AI functionality
+- Neon Serverless Postgres for data persistence
+- Qdrant Cloud for vector storage
+- ROS 2, NVIDIA Isaac, and Vision-Language-Action systems for robotics simulation
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+### Forbidden Actions
+- Starting implementation before specification approval
+- Deviating from the chosen technology stack without approval
+- Creating repositories or files without proper workflow adherence
+- Skipping documentation or testing phases
+
+### Quality Standards
+- Code must be maintainable and well-documented
+- AI responses must be reliable and pedagogically sound
+- Book content must meet academic standards
+- System performance must support multi-user educational scenarios
+
+## Development Workflow
+
+### File Generation Rules
+- Generate only Markdown files via SpecifyPlus memory during specification phase
+- Documentation must precede implementation
+- Specifications must include acceptance tests
+- All changes must be traceable to requirements
+
+### Approval Process
+- Specifications must pass architectural review
+- Technical feasibility must be confirmed
+- Resource requirements must be validated
+- Timeline estimates must be realistic
+
+### Quality Gates
+- All features require comprehensive specifications
+- Code must pass automated testing
+- AI components must undergo validation
+- Content must be reviewed by domain experts
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+This constitution supersedes all other development practices and must be followed strictly. Amendments require explicit documentation, approval from project leadership, and a clear migration plan for existing work. All PRs and reviews must verify constitutional compliance. Complexity must be justified with clear benefits to the educational mission. Use this constitution as the primary guidance document for all development decisions.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.0.0 | **Ratified**: 2025-06-13 | **Last Amended**: 2025-12-14
