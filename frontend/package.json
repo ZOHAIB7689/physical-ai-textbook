@@ -5,23 +5,42 @@
   "main": "index.js",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    // Use --webpack flag to force use of custom webpack config and resolve the Turbopack error
+    "build": "next build --webpack", 
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
     "next": "latest",
+    
+    // --- Docusaurus v3 Dependencies (Needed for your config) ---
+    // Note: Docusaurus v3 requires Node >= 18.0 and React >= 18.0
+    "@docusaurus/core": "^3.0.0", 
+    "@docusaurus/preset-classic": "^3.0.0", 
+    "@docusaurus/plugin-content-docs": "^3.0.0",
+    "@docusaurus/plugin-content-blog": "^3.0.0",
+    "@docusaurus/plugin-sitemap": "^3.0.0",
+    
+    // --- Existing Next.js/React Dependencies ---
     "clsx": "^1.1.1",
     "prism-react-renderer": "^1.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    // --- Next.js Build Tools ---
     "autoprefixer": "^10.4.0",
     "postcss": "^8.4.5",
     "tailwindcss": "^3.0.0",
     "eslint": "latest",
-    "eslint-config-next": "latest"
+    "eslint-config-next": "latest",
+    
+    // --- Missing Babel/Webpack Plugins (Needed for your .babelrc and next.config.js) ---
+    "@tailwindcss/babel-plugin": "^0.5.10", // <-- FIX: Resolves "Cannot find module" error
+    "babel-loader": "^10.0.0",
+    "@babel/preset-env": "^7.28.5",
+    "@babel/preset-react": "^7.28.5",
+    "@mdx-js/loader": "^3.1.1" 
   },
   "keywords": [
     "ai",
@@ -32,5 +51,9 @@
     "humanoid"
   ],
   "author": "SpecifyPlus AI",
-  "license": "MIT"
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0" // Ensure Node.js version meets Docusaurus v3 requirements
+  }
 }
+  
