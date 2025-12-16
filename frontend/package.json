@@ -47,17 +47,3 @@
   }
 }
 
-    "ai",
-    "textbook",
-    "education",
-    "robotics",
-    "physical-ai",
-    "humanoid"
-  ],
-  "author": "SpecifyPlus AI",
-  "license": "MIT",
-  "engines": {
-    "node": ">=18.0"
-  }
-}
-
