@@ -5,99 +5,86 @@ This document describes the complete file hierarchy of the Physical AI & Humanoi
 ## Root Directory
 ```
 physical-ai-textbook/
-├── .git/
+├── .github/
+│   └── workflows/
 ├── .gitignore
 ├── .qwen/
 │   └── commands/
 ├── .specify/
 │   ├── memory/
-│   │   └── constitution.md
 │   ├── scripts/
 │   └── templates/
 ├── QWEN.md
 ├── backend/
+│   ├── .venv/
+│   ├── README.md
+│   ├── requirements.txt
 │   └── src/
 │       ├── ai/
+│       │   ├── content_indexer.py
 │       │   ├── learning_agent.py
 │       │   ├── openai_service.py
 │       │   ├── progress_analyzer.py
-│       │   └── rag_service.py
+│       │   ├── rag_service.py
+│       │   └── vector_store.py
 │       ├── api/
+│       │   ├── __init__.py
 │       │   ├── ai.py
 │       │   ├── chapters.py
 │       │   ├── content_management.py
 │       │   ├── main.py
-│       │   └── modules.py
+│       │   ├── modules.py
+│       │   └── users.py
 │       ├── auth/
 │       │   └── auth.py
 │       ├── database/
 │       │   └── database.py
 │       ├── models/
 │       │   ├── ai_interaction.py
+│       │   ├── ai_recommendation_feedback.py
 │       │   ├── chapter.py
 │       │   ├── content_history.py
 │       │   ├── content_module.py
 │       │   ├── learning_goal.py
+│       │   ├── learning_memory.py
 │       │   ├── learning_session.py
 │       │   ├── translation_set.py
 │       │   └── user.py
 │       ├── services/
-│       │   ├── adaptive_content_service.py
-│       │   ├── ai_interaction_service.py
-│       │   ├── bulk_content_service.py
-│       │   ├── chapter_service.py
-│       │   ├── content_history_service.py
-│       │   ├── content_management_service.py
-│       │   ├── learning_goal_service.py
-│       │   ├── learning_path_service.py
-│       │   ├── learning_session_service.py
-│       │   ├── translation_qa_service.py
-│       │   ├── translation_service.py
-│       │   ├── translation_workflow.py
-│       │   └── user_service.py
+│       │   └── (service files not listed in detail)
 │       └── utils/
-│           ├── errors.py
-│           └── logger.py
+│           └── (utility files not listed in detail)
 ├── docs/
-│   └── api.md
 ├── frontend/
+│   ├── .babelrc
+│   ├── .eslintrc.json
+│   ├── docusaurus.config.js
+│   ├── next.config.js
+│   ├── package.json
+│   ├── sidebar.js
 │   └── src/
 │       ├── components/
-│       │   ├── Chatbot/
-│       │   │   └── Chatbot.js
 │       │   ├── ChapterReader/
-│       │   │   └── ChapterReader.js
+│       │   ├── Chatbot/
 │       │   ├── ContentManagement/
-│       │   │   └── ContentManagement.js
 │       │   ├── ContentNavigator/
-│       │   │   └── ContentNavigator.js
 │       │   ├── LanguageSwitcher/
-│       │   │   └── LanguageSwitcher.js
 │       │   └── LearningAgent/
-│       │       └── LearningAgent.js
 │       ├── context/
-│       │   └── PersonalizationContext.js
+│       │   └── (context files not listed in detail)
+│       ├── docs/
 │       ├── pages/
-│       │   └── textbook.js
+│       │   └── (page files not listed in detail)
 │       ├── services/
-│       │   ├── contentCache.js
-│       │   ├── learningSessionService.js
-│       │   └── personalizationService.js
+│       │   └── (service files not listed in detail)
 │       ├── styles/
-│       │   └── accessibility.css
+│       │   └── (style files not listed in detail)
 │       └── utils/
-│           ├── accessibilityUtils.js
-│           └── i18n.js
+│           └── (utility files not listed in detail)
 ├── history/
 │   └── prompts/
-│       ├── ai-textbook-platform/
-│       │   ├── 1-create-system-specification.spec.prompt.md
-│       │   ├── 1-create-implementation-plan.plan.prompt.md
-│       │   ├── 1-generate-implementation-tasks.tasks.prompt.md
-│       │   └── 2-execute-implementation-plan.green.prompt.md
-│       └── constitution/
-│           └── 1-update-project-constitution.constitution.prompt.md
-├── node_modules/
+│       └── ai-textbook-platform/
+│           └── (prompt history files not listed in detail)
 ├── specs/
 │   └── 001-ai-textbook-platform/
 │       ├── checklists/
@@ -110,52 +97,65 @@ physical-ai-textbook/
 │       ├── plan.md
 │       ├── quickstart.md
 │       ├── research.md
-│       └── spec.md
-├── package.json
-├── requirements.txt
-├── next.config.js
-├── sidebar.js
-└── docusaurus.config.js
+│       ├── spec.md
+│       └── tasks.md
+├── summary.md
+└── tests/
+    └── unit/
+        └── (unit test files not listed in detail)
 ```
 
 ## Directory Descriptions
 
 ### Root Level
-- `.git/` - Git repository metadata
+- `.github/` - GitHub workflow configurations
 - `.gitignore` - Files and directories to be ignored by Git
 - `.qwen/` - Qwen agent-specific configuration files
 - `.specify/` - Specification system configuration and templates
 - `QWEN.md` - Main project context file
-- `package.json` - Frontend dependencies and configurations
-- `requirements.txt` - Backend Python dependencies
+- `hierarchy.md` - Project hierarchy documentation
+- `summary.md` - Project summary documentation
 
 ### Backend Layer (`backend/`)
 Contains the Python/FastAPI backend implementation:
-- `ai/` - AI-related services for RAG, learning agents, etc.
-- `api/` - API route definitions (endpoints)
-- `auth/` - Authentication and authorization logic
-- `database/` - Database connection and configuration
-- `models/` - SQLAlchemy database models
-- `services/` - Business logic services
-- `utils/` - Utility functions
+- `.venv/` - Virtual environment (in .gitignore)
+- `README.md` - Backend module documentation
+- `requirements.txt` - Python dependencies
+- `src/` - Backend source code:
+  - `ai/` - AI-related services for RAG, learning agents, etc.
+  - `api/` - API route definitions (endpoints)
+  - `auth/` - Authentication and authorization logic
+  - `database/` - Database connection and configuration
+  - `models/` - SQLAlchemy database models
+  - `services/` - Business logic services
+  - `utils/` - Utility functions
 
 ### Frontend Layer (`frontend/`)
-Contains the React/Next.js frontend implementation:
-- `components/` - Reusable UI components
-- `context/` - React context providers
-- `pages/` - Main page components
-- `services/` - Client-side service utilities
-- `styles/` - CSS styling files
-- `utils/` - Frontend utility functions
+Contains the Next.js frontend implementation:
+- Configuration files (`.babelrc`, `.eslintrc.json`, `docusaurus.config.js`, `next.config.js`, `package.json`, `sidebar.js`)
+- `src/` - Frontend source code:
+  - `components/` - Reusable UI components
+  - `context/` - React context providers
+  - `docs/` - Documentation files
+  - `pages/` - Main page components
+  - `services/` - Client-side service utilities
+  - `styles/` - CSS styling files
+  - `utils/` - Frontend utility functions
 
-### Specification Layer (`specs/`)
+### Specifications (`specs/`)
 Contains all project specifications:
 - `001-ai-textbook-platform/` - Main feature specifications
-- `checklists/` - Quality validation checklists
-- `contracts/` - API contracts and specifications
+  - `checklists/` - Quality validation checklists
+  - `contracts/` - API contracts and specifications
+  - Other specification documents
 
 ### Documentation (`docs/`)
-Contains API documentation and other docs
+Contains documentation for the project
 
 ### History (`history/`)
-Contains prompt history records from the development process
+Contains prompt history records from the development process:
+- `prompts/` - Prompt history records organized by feature
+
+### Tests (`tests/`)
+Contains project tests:
+- `unit/` - Unit tests
