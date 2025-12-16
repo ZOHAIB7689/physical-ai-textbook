@@ -3,7 +3,7 @@ const path = require('path');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export', // Export as static files
+  // REMOVED: output: 'export', // <-- Delete this line!
   trailingSlash: true, // Ensure trailing slashes for compatibility with Docusaurus
 
   // --- FIX 1A: TranspilePackages moved to top-level ---
@@ -12,15 +12,11 @@ const nextConfig = {
   ],
 
   images: {
-    unoptimized: true // Required for export
+    unoptimized: true // Required for export (Keep this only if you need unoptimized images for custom reasons)
   },
   
   // --- FIX 1B: Add turbopack config to silence fatal error ---
   turbopack: {}, 
-  
-  // --- Old 'experimental' block removed/updated ---
-  // The 'experimental' key is now either removed or only contains valid keys
-  // For safety, we remove the now-invalid 'experimental' block entirely if only 'transpilePackages' was inside.
   
   webpack: (config, { isServer }) => {
     // Add configuration for handling Docusaurus-specific files
