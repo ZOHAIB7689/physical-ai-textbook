@@ -11,9 +11,6 @@
   },
   "dependencies": {
     "next": "latest",
-    "docusaurus": "^2.0.0-beta.22",
-    "@docusaurus/core": "^2.0.0-beta.22",
-    "@docusaurus/preset-classic": "^2.0.0-beta.22",
     "clsx": "^1.1.1",
     "prism-react-renderer": "^1.2.1",
     "react": "^18.2.0",
